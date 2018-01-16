@@ -45,8 +45,17 @@ Simple fields can be added using `@include`:
             This should be your name.
         @endslot
     @endcomponent
-    
-The submit button is included with `@component` as well:
+
+Pass a parameter as a value if it's short, or simple, or come from a `$variable`;
+  use a slot if you need HTML:
+
+    @component('fc::text', ['name' => 'name'])
+        @slot('label')
+            <em>Label with HTML</em>
+        @endslot
+    @endcomponent
+
+The submit button is intended to be used with `@component`:
 
     @component('fc::submit')
         Submit this form
@@ -54,15 +63,15 @@ The submit button is included with `@component` as well:
     
 Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
 
-Custom fields can be added by extending the `fc::field` template. 
-  Ensure the `$label` and `$name` attributes are passed through.
+Custom fields can be added by extending the `fc::layout.field` template.
+  Ensure the `$label`, `$name` and `$help` attributes are passed through.
   As an example, this is how the `text` field is implemented:
 
-    @component('fc::field', ['label' => $label, 'name' => $name])
-        {{ html()->text($name)->class(['form-control', 'is-invalid' => $errors->has($name)]) }}
+    @component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null])
+        {{ html()->text($name, $value ?? null)->class(['form-control', 'is-invalid' => $errors->has($name)]) }}
     @endcomponent
-    
-There are more available settings in the `fc::field` template for more customisation.
+
+There are more available settings in the `fc::layout.field` template for more customisation.
 
 ## License
 
