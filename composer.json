@@ -1,0 +1,29 @@
+{
+    "name": "rickselby/laravel-form-components",
+    "description": "Blade components to simplify form creation.",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rick Selby",
+            "email": "rick@selby-family.co.uk"
+        }
+    ],
+    "require": {
+        "illuminate/support": "^5.5",
+        "spatie/laravel-html": "^2.10",
+        "illuminate/contracts": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "RickSelby\\Laravel\\FormComponents\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RickSelby\\Laravel\\FormComponents\\FormComponentsProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+@component('fc::field', ['label' => $label, 'name' => $name, 'skipInvalid' => true])
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="{{ $name }}">
+                <span class="fa fa-calendar"></span>
+            </label>
+        </div>
+        {{
+            html()->text($name, isset($value) ? $value->format('l, j F, Y') : null)
+                  ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
+        }}
+        {{-- Invalid feedback must be within the input-group --}}
+        @include('fc::invalid-feedback')
+    </div>
+@endcomponent
