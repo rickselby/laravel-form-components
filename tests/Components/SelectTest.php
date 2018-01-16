@@ -14,16 +14,22 @@ class SelectTest extends AbstractComponentTestCase
 
     public function testCreatesInput()
     {
-        $this->createsInput('/<select/Us');
+        $this->createsInput('/<select/Uis');
     }
 
     public function testCreatesInputWithOption()
     {
-        $this->createsInput('/<option[^>]*value="key"[^>]*>[^<]*option/Us');
+        $this->createsInput('/<option[^>]*value="key"[^>]*>[^<]*option/Uis');
     }
 
     public function testCreatesInputWithName()
     {
-        $this->createsInputWithName('/<select[^>]*name="Name"/Us');
+        $this->createsInputWithName('/<select[^>]*name="Name"/Uis');
+    }
+
+    public function testCreatesInputWithValue()
+    {
+        $this->data->put('options', ['Value' => 'option']);
+        $this->createsInputWithValue('/<option[^>]*value="Value"[^>]*selected="selected"/Uis');
     }
 }

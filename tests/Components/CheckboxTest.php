@@ -8,6 +8,6 @@ class CheckboxTest extends AbstractComponentTestCase
 
     public function testCreatesInput()
     {
-        $this->createsInput('/<input[^>]*type="checkbox"/Us');
+        $this->createsInput('/<input[^>]*type="checkbox"/Uis');
     }
 }

@@ -8,6 +8,6 @@ class NumberTest extends AbstractComponentTestCase
 
     public function testCreatesInput()
     {
-        $this->createsInput('/<input[^>]*type="number"/Us');
+        $this->createsInput('/<input[^>]*type="number"/Uis');
     }
 }

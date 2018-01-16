@@ -47,6 +47,11 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->createsInputWithName();
     }
 
+    public function testCreatesInputWithValue()
+    {
+        $this->createsInputWithValue();
+    }
+
     public function testCreatesInputAndShowsErrors()
     {
         $this->createsInputAndShowsErrors();
@@ -65,7 +70,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         );
     }
 
-    public function createsInputWithLabel($regex = '/<label.*>Label.*<\/label>/Us')
+    public function createsInputWithLabel($regex = '/<label.*>Label.*<\/label>/Uis')
     {
         $this->assertRegExp(
             $regex,
@@ -73,7 +78,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         );
     }
 
-    public function createsInputWithName($regex = '/<input[^>]*name="Name"/Us')
+    public function createsInputWithName($regex = '/<input[^>]*name="Name"/Uis')
     {
         $this->assertRegExp(
             $regex,
@@ -81,7 +86,15 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         );
     }
 
-    public function createsInputAndShowsErrors($regex = '/<[^>]*class="invalid-feedback"[^>]*>.*error/Us')
+    public function createsInputWithValue($regex = '/<input[^>]*value="Value"/Uis')
+    {
+        $this->assertRegExp(
+            $regex,
+            $this->make($this->view, $this->data->put('value', 'Value')->toArray())
+        );
+    }
+
+    public function createsInputAndShowsErrors($regex = '/<[^>]*class="invalid-feedback"[^>]*>.*error/Uis')
     {
         $this->assertRegExp(
             $regex,
@@ -89,7 +102,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         );
     }
 
-    public function createsInputWithHelp($regex = '/Help/Us')
+    public function createsInputWithHelp($regex = '/Help/Uis')
     {
         $this->data->put('help', 'Help');
         $this->assertRegExp(

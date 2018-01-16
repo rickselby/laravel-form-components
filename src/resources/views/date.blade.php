@@ -7,7 +7,7 @@
             </label>
         </div>
         {{
-            html()->text($name, isset($value) ? $value->format('l, j F, Y') : null)
+            html()->text($name, $value ?? null)
                   ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
         }}
         {{-- Invalid feedback must be within the input-group --}}

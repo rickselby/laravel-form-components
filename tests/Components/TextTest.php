@@ -8,6 +8,6 @@ class TextTest extends AbstractComponentTestCase
 
     public function testCreatesInput()
     {
-        $this->createsInput('/<input[^>]*type="text"/Us');
+        $this->createsInput('/<input[^>]*type="text"/Uis');
     }
 }
