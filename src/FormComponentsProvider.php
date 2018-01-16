@@ -13,6 +13,6 @@ class FormComponentsProvider extends ServiceProvider
             return "<?php echo implode('<br />', array_map('e', $expression)); ?>";
         });
 
-        $this->loadViewsFrom(__DIR__.'resources/views', 'fc');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'fc');
     }
 }
