@@ -1,5 +1,5 @@
 
-@component('fc::field', ['label' => $label, 'name' => $name, 'skipInvalid' => true])
+@component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null, 'skipInvalid' => true])
     <div class="input-group">
         <div class="input-group-prepend">
             <label class="input-group-text" for="{{ $name }}">
@@ -7,10 +7,12 @@
             </label>
         </div>
         {{
-            html()->text($name, isset($value) ? $value->format('l, j F, Y') : null)
-                  ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
+            html()
+                ->text($name, $value ?? null)
+                ->placeholder($placeholder ?? null)
+                ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
         }}
         {{-- Invalid feedback must be within the input-group --}}
-        @include('fc::invalid-feedback')
+        @include('fc::layout.invalid-feedback')
     </div>
 @endcomponent

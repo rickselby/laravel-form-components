@@ -1,4 +1,9 @@
 
-@component('fc::field', ['label' => $label, 'name' => $name])
-    {{ html()->text($name)->class(['form-control', 'is-invalid' => $errors->has($name)]) }}
+@component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null])
+    {{
+        html()
+            ->text($name, $value ?? null)
+            ->placeholder($placeholder ?? null)
+            ->class(['form-control', 'is-invalid' => $errors->has($name)])
+    }}
 @endcomponent
