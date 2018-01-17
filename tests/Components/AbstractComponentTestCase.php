@@ -3,8 +3,8 @@
 namespace RickSelby\Tests\Components;
 
 use Illuminate\Support\Collection;
-use RickSelby\Tests\AbstractPackageTestCase;
 use RickSelby\Tests\MakeViewTrait;
+use RickSelby\Tests\AbstractPackageTestCase;
 
 abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 {
@@ -31,7 +31,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->errors = new Collection([
             'Name' => [
                 'error',
-            ]
+            ],
         ]);
     }
 
