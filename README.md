@@ -9,7 +9,9 @@ Built around [Bootstrap 4](https://getbootstrap.com/docs/4.0/),
   if it's not too difficult.
 
 I'm using [spatie/laravel-html](https://github.com/spatie/laravel-html)
-  for HTML assistance.
+  for generating each input; this has the advantage of handling old data
+  if a form submission fails, or using values from a model. See 
+  [the documentation](https://docs.spatie.be/laravel-html/v2/introduction).
 
 ## Compatibility Chart
 
