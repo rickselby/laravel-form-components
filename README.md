@@ -65,6 +65,10 @@ Default values can be passed, too:
 
     @include('fc::number', ['label' => 'Number of feet', 'name' => 'feet', 'value' => 2])
 
+As can placeholders:
+
+    @include('fc::text', ['label' => 'Name', 'name' => 'name', 'placeholder' => 'Your name'])
+    
 The submit button is intended to be used with `@component`, as it only has one parameter:
 
     @component('fc::submit')
@@ -72,6 +76,13 @@ The submit button is intended to be used with `@component`, as it only has one p
     @endcomponent
     
 Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
+
+### Overriding
+
+Laravel allows overriding of package views. Create the directory `resources/views/vendor/fc`; 
+  then create any views you wish to override. 
+
+### Extending
 
 Custom fields can be added by extending the `fc::layout.field` template.
   Ensure the `$label`, `$name` and `$help` attributes are passed through.
