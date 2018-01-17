@@ -25,13 +25,13 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
         $this->data = new Collection([
             'label' => 'Label',
-            'name' => 'Name',
+            'name'  => 'Name',
         ]);
 
         $this->errors = new Collection([
             'Name' => [
                 'error',
-            ]
+            ],
         ]);
     }
 
