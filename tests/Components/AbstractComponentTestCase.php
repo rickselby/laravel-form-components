@@ -104,7 +104,6 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function createsInputWithHelp($regex = '/Help/Uis')
     {
-        $this->data->put('help', 'Help');
         $this->assertRegExp(
             $regex,
             $this->make($this->view, $this->data->put('help', 'Help')->toArray())

@@ -15,7 +15,7 @@ I'm using [spatie/laravel-html](https://github.com/spatie/laravel-html)
 
 | Laravel Form Components | Laravel | PHP  |
 |-------------------------|---------|------|
-| **1.x**                 | 5.5     | 7.0+ |
+| **1.x**                 | 5.4+    | 7.0+ |
 
 ## Installing
 
@@ -27,6 +27,10 @@ $ composer require rickselby/laravel-form-components
 
 Laravel 5.5 will auto-discover the package.
 
+For Laravel 5.4, in `config/app.php`, add this line to the `providers` array:
+
+    RickSelby\Laravel\FormComponents\FormComponentsProvider::class,
+
 ## Usage
 
 Simple fields can be added using `@include`:
@@ -37,8 +41,19 @@ Simple fields can be added using `@include`:
     @include('fc::static', ['label' => 'Something you cannot change', 'name' => 'static'])
     @include('fc::text', ['label' => 'Name', 'name' => 'name'])
     
+By using `@component` instead, you can have HTML outside of a string, which is visually easier:
+
+    @component('fc::text', ['name' => 'name'])
+        @slot('label')
+            <em>Label with HTML</em>
+        @endslot
+    @endcomponent
+    
+You can mix-and-match passing data using an array and slots as best fits your need.
+  If you only use an array, you can use `@include` instead of `@component` and drop the `@endcomponent`.
+    
 [Help text](https://getbootstrap.com/docs/4.0/components/forms/#help-text)
-  can be added by using `@component` instead of `@include`:
+  is supported:
 
     @component('fc::text', ['label' => 'Name', 'name' => 'name'])
         @slot('help')
@@ -46,16 +61,11 @@ Simple fields can be added using `@include`:
         @endslot
     @endcomponent
 
-Pass a parameter as a value if it's short, or simple, or come from a `$variable`;
-  use a slot if you need HTML:
+Default values can be passed, too:
 
-    @component('fc::text', ['name' => 'name'])
-        @slot('label')
-            <em>Label with HTML</em>
-        @endslot
-    @endcomponent
+    @include('fc::number', ['label' => 'Number of feet', 'name' => 'feet', 'value' => 2])
 
-The submit button is intended to be used with `@component`:
+The submit button is intended to be used with `@component`, as it only has one parameter:
 
     @component('fc::submit')
         Submit this form
