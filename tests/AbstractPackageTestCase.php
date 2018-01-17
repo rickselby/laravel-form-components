@@ -2,10 +2,10 @@
 
 namespace RickSelby\Tests;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase as GrahamAbstractPackageTestCase;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Contracts\Session\Session;
 use RickSelby\Laravel\FormComponents\FormComponentsProvider;
+use GrahamCampbell\TestBench\AbstractPackageTestCase as GrahamAbstractPackageTestCase;
 
 abstract class AbstractPackageTestCase extends GrahamAbstractPackageTestCase
 {
