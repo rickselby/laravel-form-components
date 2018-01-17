@@ -8,6 +8,6 @@ class DateTest extends AbstractComponentTestCase
 
     public function testCreatesInput()
     {
-        $this->createsInput('/<input[^>]*class="[^"]*date-picker[^"]*"/Uis');
+        $this->createsInput('/<input[^>]*type="date"/Uis');
     }
 }
