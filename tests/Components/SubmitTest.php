@@ -2,8 +2,8 @@
 
 namespace RickSelby\Tests\Components;
 
-use RickSelby\Tests\AbstractPackageTestCase;
 use RickSelby\Tests\MakeViewTrait;
+use RickSelby\Tests\AbstractPackageTestCase;
 
 class SubmitTest extends AbstractPackageTestCase
 {
