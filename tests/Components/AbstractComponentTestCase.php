@@ -57,9 +57,14 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->createsInputAndShowsErrors();
     }
 
-    public function testCreatesTextInputWithHelp()
+    public function testCreatesInputWithHelp()
     {
         $this->createsInputWithHelp();
+    }
+
+    public function testCreatesInputWithPlaceholder()
+    {
+        $this->createsInputWithPlaceholder();
     }
 
     public function createsInput($regex)
@@ -107,6 +112,14 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->assertRegExp(
             $regex,
             $this->make($this->view, $this->data->put('help', 'Help')->toArray())
+        );
+    }
+
+    public function createsInputWithPlaceholder($regex = '/<input[^>]*placeholder="Placeholder"/Uis')
+    {
+        $this->assertRegExp(
+            $regex,
+            $this->make($this->view, $this->data->put('placeholder', 'Placeholder')->toArray())
         );
     }
 }

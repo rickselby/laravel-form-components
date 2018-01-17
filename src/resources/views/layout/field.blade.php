@@ -10,9 +10,7 @@
         @endunless
 
         @if($help ?? false)
-            <small class="form-text text-muted">
-                {{ $help }}
-            </small>
+            @include('fc::layout.help')
         @endif
 
     </div>

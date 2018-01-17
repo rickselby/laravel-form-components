@@ -32,4 +32,9 @@ class SelectTest extends AbstractComponentTestCase
         $this->data->put('options', ['Value' => 'option']);
         $this->createsInputWithValue('/<option[^>]*value="Value"[^>]*selected="selected"/Uis');
     }
+
+    public function testCreatesInputWithPlaceholder()
+    {
+        $this->createsInputWithPlaceholder('/<option[^>]*>[^<]*Placeholder/Uis');
+    }
 }

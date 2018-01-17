@@ -18,4 +18,12 @@ class StaticTest extends AbstractComponentTestCase
     {
         // Static fields do not show errors
     }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testCreatesInputWithPlaceholder()
+    {
+        // Static fields do not need to show a placeholder
+    }
 }

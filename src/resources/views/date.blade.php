@@ -7,8 +7,10 @@
             </label>
         </div>
         {{
-            html()->text($name, $value ?? null)
-                  ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
+            html()
+                ->text($name, $value ?? null)
+                ->placeholder($placeholder ?? null)
+                ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
         }}
         {{-- Invalid feedback must be within the input-group --}}
         @include('fc::layout.invalid-feedback')

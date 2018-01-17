@@ -24,4 +24,12 @@ class CheckboxTest extends AbstractComponentTestCase
     {
         // No errors shown for checkboxes
     }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testCreatesInputWithPlaceholder()
+    {
+        // Static fields do not need to show a placeholder
+    }
 }
