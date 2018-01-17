@@ -15,7 +15,7 @@ I'm using [spatie/laravel-html](https://github.com/spatie/laravel-html)
 
 | Laravel Form Components | Laravel | PHP  |
 |-------------------------|---------|------|
-| **1.x**                 | 5.5     | 7.0+ |
+| **1.x**                 | 5.4+    | 7.0+ |
 
 ## Installing
 
@@ -26,6 +26,10 @@ $ composer require rickselby/laravel-form-components
 ```
 
 Laravel 5.5 will auto-discover the package.
+
+For Laravel 5.4, in `config/app.php`, add this line to the `providers` array:
+
+    RickSelby\Laravel\FormComponents\FormComponentsProvider::class,
 
 ## Usage
 
