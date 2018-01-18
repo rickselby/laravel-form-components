@@ -16,7 +16,7 @@ class FormComponentsProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'fc');
 
         $this->publishes([
-            __DIR__.'resources/assets/css/' => public_path('vendor/form-components/'),
+            __DIR__.'/resources/assets/css/' => public_path('vendor/rickselby/laravel-form-components/'),
         ], 'public');
     }
 }
