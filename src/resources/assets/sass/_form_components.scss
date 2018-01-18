@@ -1,0 +1,8 @@
+// Requires bootstrap 4's variables
+
+.form-checkboxes {
+  // From .col-form-label
+  padding-top: calc(#{$input-btn-padding-y} + #{$input-btn-border-width});
+  padding-bottom: calc(#{$input-btn-padding-y} + #{$input-btn-border-width});
+}
+
