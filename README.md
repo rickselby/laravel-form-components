@@ -32,6 +32,19 @@ Laravel 5.5 will auto-discover the package.
 For Laravel 5.4, in `config/app.php`, add this line to the `providers` array:
 
     RickSelby\Laravel\FormComponents\FormComponentsProvider::class,
+    
+### Styles
+
+I wasn't happy with the layout of checkboxes, and need to add a class for some additional padding. 
+  This can be published to `public/vendor/rickselby/laravel-form-components/form_components.css`:
+
+    ./artisan vendor:publish --provider="RickSelby\Laravel\FormComponents\FormComponentsProvider" --tag="public"
+    
+Alternatively, you can include the `scss` source if you're using Laravel Mix or similar. In your `app.scss`, add:
+
+    @import "vendor/rickselby/laravel-form-components/src/resources/assets/sass/form_components";
+    
+_(I'm not sure I'm a big fan of publishing a front-end requirement through composer, but it seems to fit in this case)._
 
 ## Usage
 
