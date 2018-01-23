@@ -4,7 +4,7 @@ namespace RickSelby\Tests\Components;
 
 class StaticTest extends AbstractComponentTestCase
 {
-    use SkipTest\Errors, SkipTest\Placeholder;
+    use SkipTest\ShowsErrors, SkipTest\Placeholder, SkipTest\MarksInvalidIfErrors;
 
     protected $view = 'fc::static';
 

@@ -33,6 +33,11 @@ class SelectTest extends AbstractComponentTestCase
         $this->createsInputWithValue('/<option[^>]*value="Value"[^>]*selected="selected"/Uis');
     }
 
+    public function testCreatesInputAndMarksInvalidIfErrors()
+    {
+        $this->createsInputAndMarksInvalidIfErrors('/<select[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis');
+    }
+
     public function testCreatesInputWithPlaceholder()
     {
         $this->createsInputWithPlaceholder('/<option[^>]*>[^<]*Placeholder/Uis');

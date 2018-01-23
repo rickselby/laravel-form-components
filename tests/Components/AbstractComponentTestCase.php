@@ -52,6 +52,11 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->createsInputWithValue();
     }
 
+    public function testCreatesInputAndMarksInvalidIfErrors()
+    {
+        $this->createsInputAndMarksInvalidIfErrors();
+    }
+
     public function testCreatesInputAndShowsErrors()
     {
         $this->createsInputAndShowsErrors();
@@ -96,6 +101,14 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->assertRegExp(
             $regex,
             $this->make($this->view, $this->data->put('value', 'Value')->toArray())
+        );
+    }
+
+    public function createsInputAndMarksInvalidIfErrors($regex = '/<input[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis')
+    {
+        $this->assertRegExp(
+            $regex,
+            $this->make($this->view, $this->data->toArray(), $this->errors->toArray())
         );
     }
 

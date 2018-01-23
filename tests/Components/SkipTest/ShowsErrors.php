@@ -2,7 +2,7 @@
 
 namespace RickSelby\Tests\Components\SkipTest;
 
-trait Errors
+trait ShowsErrors
 {
     /**
      * @doesNotPerformAssertions
