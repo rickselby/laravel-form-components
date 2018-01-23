@@ -22,19 +22,24 @@ class SelectTest extends AbstractComponentTestCase
         $this->createsInput('/<option[^>]*value="key"[^>]*>[^<]*option/Uis');
     }
 
-    public function testCreatesInputWithName()
+    public function testSetsName()
     {
-        $this->createsInputWithName('/<select[^>]*name="Name"/Uis');
+        $this->setsName('/<select[^>]*name="Name"/Uis');
     }
 
-    public function testCreatesInputWithValue()
+    public function testSetsValue()
     {
         $this->data->put('options', ['Value' => 'option']);
-        $this->createsInputWithValue('/<option[^>]*value="Value"[^>]*selected="selected"/Uis');
+        $this->setsValue('/<option[^>]*value="Value"[^>]*selected="selected"/Uis');
     }
 
-    public function testCreatesInputWithPlaceholder()
+    public function testMarksInvalidIfErrors()
     {
-        $this->createsInputWithPlaceholder('/<option[^>]*>[^<]*Placeholder/Uis');
+        $this->marksInvalidIfErrors('/<select[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis');
+    }
+
+    public function testSetsPlaceholder()
+    {
+        $this->createsPlaceholder('/<option[^>]*>[^<]*Placeholder/Uis');
     }
 }
