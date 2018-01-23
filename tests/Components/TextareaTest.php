@@ -11,23 +11,23 @@ class TextareaTest extends AbstractComponentTestCase
         $this->createsInput('/<textarea/Uis');
     }
 
-    public function testCreatesInputWithName()
+    public function testSetsName()
     {
-        $this->createsInputWithName('/<textarea[^>]*name="Name"/Uis');
+        $this->setsName('/<textarea[^>]*name="Name"/Uis');
     }
 
-    public function testCreatesInputWithValue()
+    public function testSetsValue()
     {
-        $this->createsInputWithValue('/<textarea[^>]*>Value</Uis');
+        $this->setsValue('/<textarea[^>]*>Value</Uis');
     }
 
-    public function testCreatesInputAndMarksInvalidIfErrors()
+    public function testMarksInvalidIfErrors()
     {
-        $this->createsInputAndMarksInvalidIfErrors('/<textarea[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis');
+        $this->marksInvalidIfErrors('/<textarea[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis');
     }
 
-    public function testCreatesInputWithPlaceholder()
+    public function testSetsPlaceholder()
     {
-        $this->createsInputWithPlaceholder('/<textarea[^>]*placeholder="Placeholder"/Uis');
+        $this->createsPlaceholder('/<textarea[^>]*placeholder="Placeholder"/Uis');
     }
 }

@@ -7,7 +7,7 @@ trait MarksInvalidIfErrors
     /**
      * @doesNotPerformAssertions
      */
-    public function testCreatesInputAndMarksInvalidIfErrors()
+    public function testMarksInvalidIfErrors()
     {
         // Skip test for inputs that don't show errors
     }

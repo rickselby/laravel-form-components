@@ -7,7 +7,7 @@ trait Placeholder
     /**
      * @doesNotPerformAssertions
      */
-    public function testCreatesInputWithPlaceholder()
+    public function testSetsPlaceholder()
     {
         // Skip tests for fields that don't support placeholders
     }

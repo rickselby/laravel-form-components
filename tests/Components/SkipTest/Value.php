@@ -7,7 +7,7 @@ trait Value
     /**
      * @doesNotPerformAssertions
      */
-    public function testCreatesInputWithValue()
+    public function testSetsValue()
     {
         // Skip tests if input doesn't support a default value
     }

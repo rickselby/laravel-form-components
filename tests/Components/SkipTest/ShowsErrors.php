@@ -7,7 +7,7 @@ trait ShowsErrors
     /**
      * @doesNotPerformAssertions
      */
-    public function testCreatesInputAndShowsErrors()
+    public function testShowsErrors()
     {
         // Skip test for inputs that don't show errors
     }
