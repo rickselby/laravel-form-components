@@ -2,7 +2,7 @@ Laravel Form Components
 =======================
 
 Built around [Bootstrap 4](https://getbootstrap.com/docs/4.0/), 
-  these are blade components for forms to speed up form creation.
+  these are blade components for form fields to speed up form creation.
 
 ...as long as you use horizontal forms, as I do. With my layout.
   I might consider some more customization in a later version,
@@ -51,12 +51,16 @@ _(I'm not sure I'm a big fan of publishing a front-end requirement through compo
 Simple fields can be added using `@include`:
 
     @include('fc::checkbox', ['label' => 'Is active?', 'name' => 'active'])
+    @include('fc::date', ['label' => 'Date of birth', 'name' => 'birthday'])
+    @include('fc::file', ['label' => 'Your face', 'name' => 'profile'])
     @include('fc::number', ['label' => 'Number of feet', 'name' => 'feet'])
     @include('fc::select', ['label' => 'Country', 'name' => 'country', 'options' => $options])
     @include('fc::static', ['label' => 'Something you cannot change', 'name' => 'static'])
     @include('fc::text', ['label' => 'Name', 'name' => 'name'])
+    @include('fc::textarea', ['label' => 'Personal statement', 'name' => 'statement'])
     
-By using `@component` instead, you can have HTML outside of a string, which is visually easier:
+By using `@component` instead, you can use `@slot` to define the values, 
+  which can be preferable for more complicated values; for example, those with HTML:
 
     @component('fc::text', ['name' => 'name'])
         @slot('label')
@@ -83,28 +87,37 @@ Default values can be passed, too:
 As can placeholders:
 
     @include('fc::text', ['label' => 'Name', 'name' => 'name', 'placeholder' => 'Your name'])
+
+Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
+
+### Date Picker
+
+    @include('fc::datepicker', ['label' => 'Date of birth', 'name' => 'birthday'])
+    
+Date picker is just a text field with the class `date-picker`, 
+  which can then have whatever (probably javascript) applied to it to convert it to something more functional.
+
+### Submit button
     
 The submit button is intended to be used with `@component`, as it only has one parameter:
 
     @component('fc::submit')
         Submit this form
     @endcomponent
-    
-Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
 
-### Overriding
+## Overriding
 
 Laravel allows overriding of package views. Create the directory `resources/views/vendor/fc`; 
   then create any views you wish to override. 
 
-### Extending
+## Extending
 
 Custom fields can be added by extending the `fc::layout.field` template.
   Ensure the `$label`, `$name` and `$help` attributes are passed through.
-  As an example, this is how the `text` field is implemented:
+  As an example, this is how the `text` field could be implemented:
 
     @component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null])
-        {{ html()->text($name, $value ?? null)->class(['form-control', 'is-invalid' => $errors->has($name)]) }}
+        {{ html()->text($name, $value ?? null)->placeholder($placeholder ?? null)->class(['form-control', 'is-invalid' => $errors->has($name)]) }}
     @endcomponent
 
 There are more available settings in the `fc::layout.field` template for more customisation.
