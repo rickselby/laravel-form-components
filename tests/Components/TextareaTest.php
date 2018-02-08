@@ -30,4 +30,12 @@ class TextareaTest extends AbstractComponentTestCase
     {
         $this->createsPlaceholder('/<textarea[^>]*placeholder="Placeholder"/Uis');
     }
+
+    public function testSetsRows()
+    {
+        $this->assertRegExp(
+            '/<textarea[^>]*rows="Rows"/Uis',
+            $this->make($this->view, $this->data->put('rows', 'Rows')->toArray())
+        );
+    }
 }

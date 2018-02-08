@@ -1,5 +1,5 @@
 
-@component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null, 'inputClass' => 'form-checkboxes', 'skipInvalid' => true])
+@component('fc::layout.field', ['label' => $label, 'name' => $name, 'help' => $help ?? null, 'inputContainerClass' => 'form-checkboxes', 'skipInvalid' => true])
     <div class="form-check">
         {{
             html()
