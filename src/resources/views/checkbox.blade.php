@@ -5,6 +5,7 @@
             html()
                 ->checkbox($name, $checked ?? false, $value ?? null)
                 ->class(['form-check-input', 'is-invalid' => $errors->has($name)])
-         }}
+        }}
+        &nbsp;
     </div>
 @endcomponent
