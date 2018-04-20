@@ -3,8 +3,8 @@
 namespace RickSelby\Tests\Components;
 
 use Illuminate\Support\Collection;
-use RickSelby\Tests\AbstractPackageTestCase;
 use RickSelby\Tests\MakeViewTrait;
+use RickSelby\Tests\AbstractPackageTestCase;
 
 class DotNotationFeedbackTest extends AbstractPackageTestCase
 {
