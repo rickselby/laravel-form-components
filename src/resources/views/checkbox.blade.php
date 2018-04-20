@@ -4,7 +4,7 @@
         {{
             html()
                 ->checkbox($name, $checked ?? false, $value ?? null)
-                ->class(['form-check-input', 'is-invalid' => $errors->has($name)])
+                ->class(['form-check-input', 'is-invalid' => $errors->has(toDotNotation($name))])
         }}
         &nbsp;
     </div>

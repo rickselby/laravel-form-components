@@ -3,6 +3,6 @@
     {{
         html()
             ->file($name)
-            ->class(['form-control-file', 'is-invalid' => $errors->has($name)])
+            ->class(['form-control-file', 'is-invalid' => $errors->has(toDotNotation($name))])
     }}
 @endcomponent

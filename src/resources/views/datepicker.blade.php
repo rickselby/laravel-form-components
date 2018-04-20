@@ -10,7 +10,7 @@
             html()
                 ->text($name, $value ?? null)
                 ->placeholder($placeholder ?? null)
-                ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has($name)])
+                ->class(['form-control', 'date-picker', 'is-invalid' => $errors->has(toDotNotation($name))])
         }}
         {{-- Invalid feedback must be within the input-group --}}
         @include('fc::layout.invalid-feedback')

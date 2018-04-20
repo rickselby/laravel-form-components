@@ -4,7 +4,7 @@
         html()
             ->textarea($name, $value ?? null)
             ->placeholder($placeholder ?? null)
-            ->class(['form-control', 'is-invalid' => $errors->has($name)])
+            ->class(['form-control', 'is-invalid' => $errors->has(toDotNotation($name))])
             ->attributeIf($rows ?? null, 'rows', $rows ?? null)
     }}
 @endcomponent
