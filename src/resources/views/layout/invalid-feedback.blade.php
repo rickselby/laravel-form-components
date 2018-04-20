@@ -1,9 +1,5 @@
-@php
- $dotName = preg_replace('/\[(.+)\]/U', '.$1', $name)
-@endphp
-
-@if ($errors->has($dotName))
+@if ($errors->has(toDotNotation($name)))
     <div class="invalid-feedback">
-        @array2br($errors->get($dotName))
+        @array2br($errors->get(toDotNotation($name)))
     </div>
 @endif
