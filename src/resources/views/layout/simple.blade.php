@@ -4,6 +4,6 @@
         html()
             ->input($type, $name, $value ?? null)
             ->placeholder($placeholder ?? null)
-            ->class(['form-control', 'is-invalid' => $errors->has($name)])
+            ->class(['form-control', 'is-invalid' => $errors->has(toDotNotation($name))])
     }}
 @endcomponent
