@@ -87,6 +87,10 @@ Default values can be passed, too:
 As can placeholders:
 
     @include('fc::text', ['label' => 'Name', 'name' => 'name', 'placeholder' => 'Your name'])
+    
+Classes can be added to the inputs; you must pass an array:
+
+    @include('fc::text', ['label' => 'Name', 'name' => 'name', 'class' => ['a-name']])
 
 Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
 

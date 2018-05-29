@@ -4,7 +4,8 @@
         {{
             html()
                 ->submit($slot)
-                ->class('btn btn-primary')
+                ->class(['btn', 'btn-primary'])
+                ->class($class ?? [])
         }}
     </div>
 </div>

@@ -42,4 +42,9 @@ class SelectTest extends AbstractComponentTestCase
     {
         $this->createsPlaceholder('/<option[^>]*>[^<]*Placeholder/Uis');
     }
+
+    public function testAddsClass()
+    {
+        $this->addsClass('/<select[^>]*class="[^"]*addedClass"[^>]*>/Uis');
+    }
 }

@@ -4,6 +4,8 @@
         html()
             ->select($name, $options, $value ?? null)
             ->placeholder($placeholder ?? null)
-            ->class(['form-control', 'is-invalid' => $errors->has(toDotNotation($name))])
+            ->class('form-control')
+            ->class($class ?? [])
+            ->invalidClass($errors, $name)
     }}
 @endcomponent

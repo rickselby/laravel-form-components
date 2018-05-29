@@ -38,4 +38,9 @@ class TextareaTest extends AbstractComponentTestCase
             $this->make($this->view, $this->data->put('rows', 'Rows')->toArray())
         );
     }
+
+    public function testAddsClass()
+    {
+        $this->addsClass('/<textarea[^>]*class="[^"]*addedClass"[^>]*>/Uis');
+    }
 }
