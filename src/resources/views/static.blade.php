@@ -3,7 +3,8 @@
     {{
         html()
             ->text($name, $value ?? null)
-            ->class(['form-control-plaintext'])
+            ->class('form-control-plaintext')
+            ->class($class ?? [])
             ->attribute('readonly', 'readonly')
     }}
 @endcomponent
