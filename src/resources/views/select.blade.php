@@ -4,6 +4,7 @@
         html()
             ->select($name, $options, $value ?? null)
             ->placeholder($placeholder ?? null)
+            ->value($value ?? null)
             ->multipleIf($multiple ?? false)
             ->class('form-control')
             ->class($class ?? [])
