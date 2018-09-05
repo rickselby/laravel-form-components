@@ -47,10 +47,4 @@ class SelectTest extends AbstractComponentTestCase
     {
         $this->addsClass('/<select[^>]*class="[^"]*addedClass"[^>]*>/Uis');
     }
-
-    public function testSetsMultiple()
-    {
-        $this->data->put('multiple', true);
-        $this->setsValue('/<select[^>]*multiple/Uis');
-    }
 }
