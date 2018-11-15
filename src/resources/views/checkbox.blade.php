@@ -4,7 +4,7 @@
         {{
             html()
                 ->checkbox($name, $checked ?? false, $value ?? null)
-                ->class('form-check-input')
+                ->class('form-check-input position-static')
                 ->class($class ?? [])
                 ->invalidClass($errors, $name)
         }}
