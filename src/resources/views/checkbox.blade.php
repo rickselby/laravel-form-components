@@ -3,7 +3,7 @@
     <div class="form-check">
         {{
             html()
-                ->checkbox($name, $checked ?? false, $value ?? null)
+                ->checkbox($name, $checked ?? false, $value ?? '1')
                 ->class('form-check-input position-static')
                 ->class($class ?? [])
                 ->invalidClass($errors, $name)
