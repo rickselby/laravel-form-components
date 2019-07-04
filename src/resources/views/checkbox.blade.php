@@ -7,6 +7,7 @@
                 ->class('form-check-input position-static')
                 ->class($class ?? [])
                 ->invalidClass($errors, $name)
+                ->addData($data ?? null)
         }}
     </div>
 @endcomponent

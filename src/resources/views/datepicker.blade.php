@@ -13,6 +13,7 @@
                 ->class(['form-control', 'date-picker'])
                 ->class($class ?? [])
                 ->invalidClass($errors, $name)
+                ->addData($data ?? null)
         }}
         {{-- Invalid feedback must be within the input-group --}}
         @include('fc::layout.invalid-feedback')

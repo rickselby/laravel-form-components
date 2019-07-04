@@ -47,4 +47,9 @@ class SelectTest extends AbstractComponentTestCase
     {
         $this->addsClass('/<select[^>]*class="[^"]*addedClass"[^>]*>/Uis');
     }
+
+    public function testAddsData()
+    {
+        $this->addsData('/<select[^>]*data-test="test"[^>]*>/Uis');
+    }
 }

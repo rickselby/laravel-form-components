@@ -7,5 +7,6 @@
             ->class('form-control')
             ->class($class ?? [])
             ->invalidClass($errors, $name)
+            ->addData($data ?? null)
     }}
 @endcomponent

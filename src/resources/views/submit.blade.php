@@ -6,6 +6,7 @@
                 ->submit($slot)
                 ->class(['btn', 'btn-primary'])
                 ->class($class ?? [])
+                ->addData($data ?? null)
         }}
     </div>
 </div>

@@ -10,5 +10,6 @@
             ->attributeIf($step ?? null, 'step', $step ?? null)
             ->attributeIf($min ?? null, 'min', $min ?? null)
             ->attributeIf($max ?? null, 'max', $max ?? null)
+            ->addData($data ?? null)
     }}
 @endcomponent
