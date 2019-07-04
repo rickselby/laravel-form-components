@@ -17,7 +17,8 @@ I'm using [spatie/laravel-html](https://github.com/spatie/laravel-html)
 
 | Laravel Form Components | Laravel | PHP  |
 |-------------------------|---------|------|
-| **1.x**                 | 5.4+    | 7.0+ |
+| **2.x**                 | 5.4+    | 7.1+ |
+| 1.x                     | 5.4-5.7 | 7.0+ |
 
 ## Installing
 
@@ -91,6 +92,10 @@ As can placeholders:
 Classes can be added to the inputs; you must pass an array:
 
     @include('fc::text', ['label' => 'Name', 'name' => 'name', 'class' => ['a-name']])
+
+So can data attributes, in a similar manner
+
+    @include('fc::text', ['label' => 'Name', 'name' => 'name', 'data' => ['type', 'first']])
 
 Validation errors are shown automatically based on the field name, thanks to the `.invalid-feedback` class.
 

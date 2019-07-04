@@ -6,7 +6,7 @@ class SelectTest extends AbstractComponentTestCase
 {
     protected $view = 'fc::select';
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->data->put('options', ['key' => 'option']);

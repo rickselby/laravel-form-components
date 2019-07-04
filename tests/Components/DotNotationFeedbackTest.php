@@ -18,7 +18,7 @@ class DotNotationFeedbackTest extends AbstractPackageTestCase
     /** @var Collection */
     protected $errors;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->makeViewSetUp();
