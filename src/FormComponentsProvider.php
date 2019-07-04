@@ -39,11 +39,13 @@ class FormComponentsProvider extends ServiceProvider
 
         Element::macro('addData', function ($data) {
             $element = clone $this;
+
             if ($data) {
-                foreach($data as $key => $value) {
+                foreach ($data as $key => $value) {
                     $element = $element->data($key, $value);
                 }
-            };
+            }
+
             return $element;
         });
     }

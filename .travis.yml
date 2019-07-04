@@ -24,7 +24,8 @@ matrix:
 
 before_install:
   - composer self-update --stable -n
-  - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update -n
+  - composer global require --no-progress --no-suggest -n hirak/prestissimo
+  - composer require "laravel/framework:${LARAVEL_VERSION}" --no-update --no-progress --no-suggest -n
 
 install: travis_retry composer install --no-suggest --prefer-dist -n -o
 
