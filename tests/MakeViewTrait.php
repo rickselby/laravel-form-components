@@ -14,7 +14,7 @@ trait MakeViewTrait
         $this->viewFactory = app(ViewFactory::class);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->makeViewSetUp();
