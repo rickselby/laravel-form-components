@@ -36,5 +36,15 @@ class FormComponentsProvider extends ServiceProvider
         Element::macro('invalidClass', function ($errors, $name) {
             return $this->addClass(['is-invalid' => $errors->has(toDotNotation($name))]);
         });
+
+        Element::macro('addData', function ($data) {
+            $element = clone $this;
+            if ($data) {
+                foreach($data as $key => $value) {
+                    $element = $element->data($key, $value);
+                }
+            };
+            return $element;
+        });
     }
 }

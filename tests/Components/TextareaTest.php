@@ -43,4 +43,9 @@ class TextareaTest extends AbstractComponentTestCase
     {
         $this->addsClass('/<textarea[^>]*class="[^"]*addedClass"[^>]*>/Uis');
     }
+
+    public function testAddsData()
+    {
+        $this->addsData('/<textarea[^>]*data-test="test"[^>]*>/Uis');
+    }
 }

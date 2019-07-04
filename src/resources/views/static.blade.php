@@ -6,5 +6,6 @@
             ->class('form-control-plaintext')
             ->class($class ?? [])
             ->attribute('readonly', 'readonly')
+            ->addData($data ?? null)
     }}
 @endcomponent

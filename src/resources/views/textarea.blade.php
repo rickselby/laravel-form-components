@@ -8,5 +8,6 @@
             ->class($class ?? [])
             ->invalidClass($errors, $name)
             ->attributeIf($rows ?? null, 'rows', $rows ?? null)
+            ->addData($data ?? null)
     }}
 @endcomponent

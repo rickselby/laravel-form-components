@@ -6,5 +6,6 @@
             ->class('form-control-file')
             ->class($class ?? [])
             ->invalidClass($errors, $name)
+            ->addData($data ?? null)
     }}
 @endcomponent

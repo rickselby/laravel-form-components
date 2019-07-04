@@ -77,6 +77,11 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->addsClass();
     }
 
+    public function testAddsData()
+    {
+        $this->addsData();
+    }
+
     public function createsInput($regex)
     {
         $this->assertRegExp(
@@ -146,6 +151,14 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
         $this->assertRegExp(
             $regex,
             $this->make($this->view, $this->data->put('class', 'addedClass')->toArray())
+        );
+    }
+
+    public function addsData($regex = '/<input[^>]*data-test="test"[^>]*>/Uis')
+    {
+        $this->assertRegExp(
+            $regex,
+            $this->make($this->view, $this->data->put('data', ['test' => 'test'])->toArray())
         );
     }
 }
