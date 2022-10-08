@@ -11,7 +11,7 @@
     ],
     "require": {
         "illuminate/contracts": "6.*|7.*|8.*",
-        "spatie/laravel-html": "^2.10"
+        "spatie/laravel-html": "^3.0"
     },
     "require-dev": {
         "graham-campbell/testbench": "^4.0|^5.0",
