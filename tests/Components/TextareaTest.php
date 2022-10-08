@@ -33,7 +33,7 @@ class TextareaTest extends AbstractComponentTestCase
 
     public function testSetsRows()
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/<textarea[^>]*rows="Rows"/Uis',
             $this->make($this->view, $this->data->put('rows', 'Rows')->toArray())
         );

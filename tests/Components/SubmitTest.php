@@ -11,7 +11,7 @@ class SubmitTest extends AbstractPackageTestCase
 
     public function testCreatesSubmitWithText()
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/<button[^>]*type="submit"[^>]*>[^<]*SLOT/',
             $this->make('fc::submit', ['slot' => 'SLOT'])
         );
