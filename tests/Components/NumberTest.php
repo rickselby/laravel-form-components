@@ -13,7 +13,7 @@ class NumberTest extends AbstractComponentTestCase
 
     public function testSetsStep()
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/<input[^>]*step="Step"/Uis',
             $this->make($this->view, $this->data->put('step', 'Step')->toArray())
         );
@@ -21,7 +21,7 @@ class NumberTest extends AbstractComponentTestCase
 
     public function testSetsMin()
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/<input[^>]*min="Min"/Uis',
             $this->make($this->view, $this->data->put('min', 'Min')->toArray())
         );
@@ -29,7 +29,7 @@ class NumberTest extends AbstractComponentTestCase
 
     public function testSetsMax()
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             '/<input[^>]*max="Max"/Uis',
             $this->make($this->view, $this->data->put('max', 'Max')->toArray())
         );

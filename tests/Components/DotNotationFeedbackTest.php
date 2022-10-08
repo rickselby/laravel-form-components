@@ -37,7 +37,7 @@ class DotNotationFeedbackTest extends AbstractPackageTestCase
 
     public function testMarksInvalidIfErrors($regex = '/<input[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray(), $this->errors->toArray())
         );
@@ -45,7 +45,7 @@ class DotNotationFeedbackTest extends AbstractPackageTestCase
 
     public function testShowsErrors($regex = '/<[^>]*class="invalid-feedback"[^>]*>.*error/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray(), $this->errors->toArray())
         );

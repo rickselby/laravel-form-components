@@ -84,7 +84,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function createsInput($regex)
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray())
         );
@@ -92,7 +92,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function createsLabel($regex = '/<label.*>Label.*<\/label>/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray())
         );
@@ -100,7 +100,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function setsName($regex = '/<input[^>]*name="Name"/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray())
         );
@@ -108,7 +108,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function setsValue($regex = '/<input[^>]*value="Value"/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->put('value', 'Value')->toArray())
         );
@@ -116,7 +116,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function marksInvalidIfErrors($regex = '/<input[^>]*class="[^"]*is-invalid"[^>]*>.*error/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray(), $this->errors->toArray())
         );
@@ -124,7 +124,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function showsErrors($regex = '/<[^>]*class="invalid-feedback"[^>]*>.*error/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->toArray(), $this->errors->toArray())
         );
@@ -132,7 +132,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function createsHelp($regex = '/Help/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->put('help', 'Help')->toArray())
         );
@@ -140,7 +140,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function createsPlaceholder($regex = '/<input[^>]*placeholder="Placeholder"/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->put('placeholder', 'Placeholder')->toArray())
         );
@@ -148,7 +148,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function addsClass($regex = '/<input[^>]*class="[^"]*addedClass"[^>]*>/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->put('class', 'addedClass')->toArray())
         );
@@ -156,7 +156,7 @@ abstract class AbstractComponentTestCase extends AbstractPackageTestCase
 
     public function addsData($regex = '/<input[^>]*data-test="test"[^>]*>/Uis')
     {
-        $this->assertRegExp(
+        $this->assertMatchesRegularExpression(
             $regex,
             $this->make($this->view, $this->data->put('data', ['test' => 'test'])->toArray())
         );
