@@ -2,8 +2,8 @@
 
 namespace RickSelby\Tests;
 
-use Illuminate\Support\MessageBag;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use Illuminate\Support\MessageBag;
 
 trait MakeViewTrait
 {
