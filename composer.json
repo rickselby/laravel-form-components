@@ -36,5 +36,8 @@
                 "RickSelby\\Laravel\\FormComponents\\FormComponentsProvider"
             ]
         }
+    },
+    "config": {
+        "allow-plugins": false
     }
 }
