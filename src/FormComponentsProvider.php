@@ -2,9 +2,9 @@
 
 namespace RickSelby\Laravel\FormComponents;
 
-use Spatie\Html\Elements\Element;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Html\Elements\Element;
 
 class FormComponentsProvider extends ServiceProvider
 {
