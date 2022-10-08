@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "illuminate/contracts": "8.*",
+        "illuminate/contracts": "8.*|9.*",
         "spatie/laravel-html": "^3.0"
     },
     "require-dev": {
