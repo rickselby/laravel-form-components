@@ -1,6 +1,9 @@
 Laravel Form Components
 =======================
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+![Packagist Version](https://img.shields.io/packagist/v/rickselby/laravel-form-components)
+
 Built around [Bootstrap 4](https://getbootstrap.com/docs/4.0/), 
   these are blade components for form fields to speed up form creation.
 
@@ -15,10 +18,12 @@ I'm using [spatie/laravel-html](https://github.com/spatie/laravel-html)
 
 ## Compatibility Chart
 
-| Laravel Form Components | Laravel | PHP  |
-|-------------------------|---------|------|
-| **2.x**                 | 5.4+    | 7.1+ |
-| 1.x                     | 5.4-5.7 | 7.0+ |
+| Laravel Form Components | Laravel | PHP     |
+|-------------------------|---------|---------|
+| **4.x**                 | 8.x-9.x | 8.0+    |
+| 3.x                     | 6.x-8.x | 7.3-8.0 |
+| 2.x                     | 5.4-5.8 | 7.1+    |
+| 1.x                     | 5.4-5.7 | 7.0+    |
 
 ## Installing
 
@@ -28,7 +33,7 @@ Require the project using [Composer](https://getcomposer.org):
 $ composer require rickselby/laravel-form-components
 ```
 
-Laravel 5.5 will auto-discover the package.
+Laravel 5.5+ will auto-discover the package.
 
 For Laravel 5.4, in `config/app.php`, add this line to the `providers` array:
 
