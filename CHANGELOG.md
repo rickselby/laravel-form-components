@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.2.0] - 2023-03-07
+### Added
+- Support Laravel 10.x
+
+## Removed
+- Support for Laravel 8.x
+
 ## [4.1.1] - 2022-10-08
 ### Fixed
 - Change default checked status from false to null
