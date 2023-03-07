@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "illuminate/contracts": "8.*|9.*",
+        "illuminate/contracts": "9.*|10.*",
         "spatie/laravel-html": "^3.0"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^4.0|^5.0",
+        "graham-campbell/testbench": "^6.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
