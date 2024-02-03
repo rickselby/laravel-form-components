@@ -25,7 +25,7 @@ class DotNotationFeedbackTest extends AbstractPackageTestCase
 
         $this->data = new Collection([
             'label' => 'Label',
-            'name'  => 'name[a]',
+            'name' => 'name[a]',
         ]);
 
         $this->errors = new Collection([
